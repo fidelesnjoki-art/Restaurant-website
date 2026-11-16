@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../api";
 import toast from "react-hot-toast";
 import SectionHeader from "../components/SectionHeader";
 import { CalendarDays, Clock, Users, CheckCircle } from "lucide-react";
@@ -19,7 +19,7 @@ export default function Reservations() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("/api/reservations", form);
+      await api.post("/api/reservations", form);
       setSuccess(true);
       setForm(initial);
       toast.success("Reservation confirmed!");

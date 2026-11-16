@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import api from "../api";
 import MenuCard from "../components/MenuCard";
 import SectionHeader from "../components/SectionHeader";
 import { ChefHat, Clock, Star, Users } from "lucide-react";
@@ -16,7 +16,7 @@ export default function Home() {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/menu/featured").then(r => setFeatured(r.data)).catch(() => {});
+    api.get("/api/menu/featured").then(r => setFeatured(r.data)).catch(() => {});
   }, []);
 
   return (

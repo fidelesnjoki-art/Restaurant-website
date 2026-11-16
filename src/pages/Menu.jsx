@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../api";
 import MenuCard from "../components/MenuCard";
 import SectionHeader from "../components/SectionHeader";
 
@@ -10,7 +10,7 @@ export default function Menu() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Promise.all([axios.get("/api/menu/categories"), axios.get("/api/menu")])
+    Promise.all([api.get("/api/menu/categories"), api.get("/api/menu")])
       .then(([catRes, itemRes]) => {
         setCategories(catRes.data);
         setItems(itemRes.data);
