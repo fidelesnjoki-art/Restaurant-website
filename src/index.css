@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap");
+@import "tailwindcss";
+
+:root {
+  --red: #b5271f;
+  --red-light: #d9342a;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --dark: #0d0d0d;
+  --dark-2: #181212;
+  --dark-3: #221a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark);
+  color: #e5e5e5;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+}
+
+.chinese {
+  font-family: "Noto Serif SC", serif;
+  color: var(--gold);
+  font-size: 0.9em;
+  letter-spacing: 0.15em;
+}
+
+.gold { color: var(--gold); }
+.bg-dark { background-color: var(--dark); }
+.bg-dark-2 { background-color: var(--dark-2); }
+.bg-dark-3 { background-color: var(--dark-3); }
+.border-gold { border-color: var(--gold); }
+
+.btn-gold {
+  background-color: var(--red);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-gold:hover {
+  background-color: var(--red-light);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-outline:hover {
+  background-color: var(--gold);
+  color: #0d0d0d;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+input, textarea, select {
+  background-color: var(--dark-3);
+  border: 1px solid #3a2a2a;
+  color: #e5e5e5;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--red);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #666;
+}
